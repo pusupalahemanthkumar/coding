@@ -65,6 +65,29 @@ void printLevelOrder(Node *root)
             q.push(node->right);
     }
 }
+int height(Node* node)
+{
+    if (node == NULL)
+        return 0;
+    else
+    {
+        /* compute the height of each subtree */
+        int lheight = height(node->left);
+        int rheight = height(node->right);
+ 
+        /* use the larger one */
+        if (lheight > rheight)
+        {
+            return(lheight + 1);
+        }
+        else {
+          return(rheight + 1);
+        }
+    }
+}
+int diameter(Node* root){
+    
+}
 
 
 int main(){
